@@ -1,3 +1,4 @@
+-- Henrique Vieira da Costa
 -- 1. Escreva uma função chamada soma1 que recebe um inteiro como argumento e retorna um inteiro uma unidade maior que a entrada. 
 soma1 :: Int -> Int
 soma1 x = x + 1
@@ -125,20 +126,6 @@ bissexto ano
     | otherwise = False
 
 main :: IO()
-main = do
-
-    putStrLn("Func. 1: entrada:10; resultado:" ++ show(soma1 10))
-    putStrLn("Func. 2: entrada:100; resultado:" ++ show(sempre 100))
-    putStrLn("Func. 3: entrada:2.1 2.1 3.1; resultado:" ++ show(treco 2.1 2.1 3.1))
-    putStrLn("Func. 4: entrada:4 3; resultado:" ++ show(resto 4 3))
-    putStrLn("Func. 5: entrada:4 5 8 6; resultado:" ++ show(precoMaior 4 5 8 6))
-    putStrLn("Func. 6: entrada:12 2; resultado:" ++ show(impar 12 2))
-    putStrLn("Func. 7: entrada:10 6; resultado:" ++ show(par (10, 6)))
-    putStrLn("Func. 8: entrada:1 1 1; resultado:" ++ show(equacao 1 1 1))
-    putStrLn("Func. 9: entrada:170 1.90; resultado:" ++ show(diagnostico 170 1.90 ))
-    putStrLn("Func. 10: entrada:1977; resultado:" ++ show(bissexto 1977))
-    
-    
 main = do
 
     putStrLn("Func. 1: entrada:10; resultado:" ++ show(soma1 10))
