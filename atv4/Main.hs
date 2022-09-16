@@ -1,8 +1,6 @@
--- Henrique Vieira da Costa
-
 import Data.Char
 {- 1. Escreva uma função chamada fatorialn que usando o operador range e a função foldr devolva o fatorial de n. -}
-
+fatorialn :: Int -> Int 
 fatorialn n = foldl (*) 1 [1..n]
 
 {- 2. Usando a função map escreva uma função, chamada quadradoReal que recebe uma lista de números reais, positivos e negativos e devolva uma lista com o quadrado de cada um dos reais listados. -}
@@ -29,9 +27,9 @@ maiorMultiploDe  x = maximum (filter (\y -> mod y x == 0) [0..100000])
 
 somaQuadrados n = foldr  (\x y -> (x**2)+y) 0 [1..n]
 
-{- 7. Usando Haskell e a função foldl defina uma função, chamada comprimento, que devolva o comprimento (cardinalidade) de uma lista dada. -}
---comprimento :: [Int] -> Int
---comprimento l = foldl l
+-- 7. Usando Haskell e a função foldl defina uma função, chamada comprimento, que devolva o comprimento (cardinalidade) de uma lista dada. 
+comprimento :: [Int] -> Int
+comprimento l = foldl (\contador _ -> contador+1) 0 l
 
 {- 8. Esta é uma tarefa de pesquisa: você deve encontrar e executar exemplos em Haskell do uso das seguintes funções disponíveis no Prelude: flip, ord, max, min, curry, uncurry. Para cada uma destas funções você deverá encontrar, executar e testar no mínimo dois exemplos.-}
 
@@ -53,11 +51,23 @@ teste_uncurry = uncurry mod (10,4)
 teste_uncurry2 = uncurry mod (20,4)
 
 main = do
-  putStrLn("Func. 1: entrada:5; resultado:" ++ show(show(fatorialn 5)))
-  putStrLn("Func. 2: entrada:5; resultado:" ++ show(show(quadradoReal [5,-5, 10])))
-  putStrLn("Func. 3: entrada:5; resultado:" ++ show(show(comprimentoPalavras ["henrique", "oi", "frank"])))
-  putStrLn("Func. 4: entrada:; resultado:" ++ show(show(maiorMultiploDe29)))
-  putStrLn("Func. 5: entrada:9; resultado:" ++ show(show(maiorMultiploDe 9)))
-  putStrLn("Func. 6: entrada:4; resultado:" ++ show(show(somaQuadrados 4)))
-  putStrLn("Func. 7: entrada:4; resultado:" ++ show(show(somaQuadrados 4)))
-  putStrLn("Func. 8: entrada:4; resultado:" ++ show(show(somaQuadrados 4)))
+    putStrLn("Func 1: entrada:5 >> resultado:" ++ show(fatorialn 5))
+    putStrLn("Func 2: entrada:[5,-2, 15] >> resultado:" ++ show(quadradoReal [5,-2, 15]))
+    putStrLn("Func 3: entrada:[Test1, Test22, Test333] >> resultado:" ++ show(comprimentoPalavras ["Test1", "Test22", "Test333"]))
+    putStrLn("Func 4: entrada: >> resultado:" ++ show(maiorMultiploDe29))
+    putStrLn("Func 5: entrada:21 >> resultado:" ++ show(maiorMultiploDe 21))
+    putStrLn("Func 6: entrada:8 >> resultado:" ++ show (somaQuadrados 8))
+    putStrLn("Func 7: entrada:[1,2,3,4,5] >> resultado:" ++ show (comprimento [1,2,3,4,5]))
+    putStrLn("Funcs 8:")
+    
+    putStrLn ("- Flip: " ++ show (teste_flip))
+    putStrLn ("- Ord1: " ++ show (teste_ord))
+    putStrLn ("- Ord2: " ++ show (teste_ord2))
+    putStrLn ("- Max1: " ++ show (teste_max))
+    putStrLn ("- Max2: " ++ show (teste_max2))
+    putStrLn ("- Min1: " ++ show (teste_min))
+    putStrLn ("- Min2: " ++ show (teste_min2))
+    putStrLn ("- Curry1: " ++ show (teste_curry))
+    putStrLn ("- Curry2: " ++ show (teste_curry2))
+    putStrLn ("- Uncurry1: " ++ show (teste_uncurry))
+    putStrLn ("- Uncurry2: " ++ show (teste_uncurry2))
